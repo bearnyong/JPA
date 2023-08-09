@@ -39,7 +39,7 @@ public class Member {
     private String address;
 
     @Column(name = "enroll_date")
-    @Temporal(TemporalType.TIMESTAMP) //날짜 시간 같이...
+    @Temporal(TemporalType.TIMESTAMP) //날짜 및 시간을 모두 저장한다.
     private Date enrollDate;
 
     @Column(name = "member_role")
