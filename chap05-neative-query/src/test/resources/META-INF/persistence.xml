@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="jpatest"> <!--entityManagerFactory 환경등록 이름 맞추기-->
+<!--        <class>com.study.section01.simple.Menu</class>-->
+<!--        <class>com.study.section01.simple.Category</class>-->
+        <class>com.study.section02.named.Category</class>
+        <properties>
+            <!--DB Connection의 관련된 설정해주기-->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/menudb"/>
+            <property name="javax.persistence.jdbc.user" value="myjpa"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <!--hiberNate-->
+            <!--콘솔에 실행되는 테이블 생성(DDL)을 출력해준다.-->
+            <property name="hibernate.show_sql" value="true"/> <!--쿼리보여주기-->
+            <property name="hibernate.format_sql" value="true"/> <!--일자 말고 포맷팅 예쁘게 정리해주기-->
+            <!--애플리케이션 실행 시점에 데이터베이스 테이블을 자동으로 생성해준다.-->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/> <!--없는 데이터베이스를 쓸 예정이기에 create-->
+        </properties>
+    </persistence-unit>
+</persistence>
